@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Horn Integrations provides low-voltage and ICT services including structured cabling, cameras, access control, fiber testing, troubleshooting, labeling, and documentation." />
+  <meta name="theme-color" content="#0a0f16" />
+  <title>Horn Integrations | Low-Voltage & ICT</title>
+
+  <style>
+    :root{
+      --bg:#0a0f16;
+      --bg2:#0d141d;
+      --panel:#111a25;
+      --panel2:#0d141d;
+      --text:#f5f7fa;
+      --muted:#a7b3c0;
+      --line:#243346;
+      --accent:#55baff;
+      --accent2:#86d1ff;
+      --max:1160px;
+      --radius:18px;
+      --shadow:0 22px 64px rgba(0,0,0,.28);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 86% 6%,rgba(85,186,255,.14),transparent 25%),
+        radial-gradient(circle at 3% 75%,rgba(85,186,255,.05),transparent 20%),
+        linear-gradient(180deg,#090e14 0%,#0b1118 100%);
+      line-height:1.6;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(9,14,20,.84);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    nav{
+      min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px
+    }
+
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand-mark{
+      width:40px;height:40px;border-radius:12px;display:grid;place-items:center;
+      border:1px solid var(--line);
+      background:linear-gradient(145deg,#162438,#0e151f);
+      color:var(--accent2);font-weight:900;font-size:14px;
+    }
+    .brand-name{font-weight:850;letter-spacing:.03em;white-space:nowrap}
+    .brand-sub{display:block;color:var(--muted);font-size:10px;letter-spacing:.18em;margin-top:-3px}
+
+    .navlinks{display:flex;gap:22px;color:var(--muted);font-size:14px}
+    .navlinks a:hover{color:#fff}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 18px;border-radius:11px;background:var(--accent);
+      color:#07111b;font-weight:850;border:1px solid transparent;
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-1px);filter:brightness(1.04)}
+    .btn.secondary{background:transparent;color:#fff;border-color:var(--line)}
+
+    .hero{
+      padding:102px 0 86px;
+      display:grid;grid-template-columns:1.15fr .85fr;gap:58px;align-items:center
+    }
+
+    .eyebrow{
+      color:var(--accent2);font-size:13px;font-weight:850;
+      letter-spacing:.17em;text-transform:uppercase
+    }
+
+    h1,h2,h3{margin-top:0}
+    h1{
+      font-size:clamp(46px,7.3vw,80px);line-height:1.01;letter-spacing:-.045em;
+      margin:16px 0 22px
+    }
+    .hero p{font-size:19px;color:var(--muted);max-width:760px;margin:0 0 28px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+
+    .hero-card{
+      background:linear-gradient(160deg,rgba(18,27,39,.98),rgba(11,16,23,.98));
+      border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow)
+    }
+    .hero-card h3{font-size:18px;margin-bottom:18px}
+    .hero-card ul{list-style:none;padding:0;margin:0;display:grid;gap:13px}
+    .hero-card li{display:flex;gap:12px;color:#dce5ef;align-items:flex-start}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:9px;flex:0 0 auto;box-shadow:0 0 18px rgba(85,186,255,.6)}
+
+    section{padding:86px 0;border-top:1px solid rgba(255,255,255,.05)}
+    .section-head{max-width:780px;margin-bottom:36px}
+    .section-head h2{font-size:clamp(32px,5vw,44px);line-height:1.08;letter-spacing:-.035em;margin:10px 0 12px}
+    .section-head p{color:var(--muted);margin:0}
+
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{
+      background:linear-gradient(160deg,var(--panel),var(--panel2));
+      border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+      min-height:210px
+    }
+    .card .num{font-size:12px;color:var(--accent2);font-weight:850;letter-spacing:.14em}
+    .card h3{margin:10px 0 8px;font-size:19px}
+    .card p{margin:0;color:var(--muted);font-size:15px}
+
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+    .split p{color:var(--muted)}
+
+    .capability-table{
+      display:grid;gap:12px;margin-top:24px
+    }
+    .capability-row{
+      display:grid;grid-template-columns:180px 1fr;gap:18px;
+      padding:16px 18px;border:1px solid var(--line);border-radius:13px;
+      background:rgba(255,255,255,.02)
+    }
+    .capability-row strong{font-size:14px}
+    .capability-row span{color:var(--muted);font-size:14px}
+
+    .credential-list{display:grid;gap:12px}
+    .credential{
+      border:1px solid var(--line);border-radius:13px;padding:16px 18px;background:rgba(255,255,255,.02)
+    }
+    .credential strong{display:block;margin-bottom:2px}
+    .credential span{color:var(--muted);font-size:14px}
+    .credential.in-progress{border-style:dashed}
+
+    .customer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .customer{
+      border:1px solid var(--line);border-radius:14px;padding:20px;
+      background:linear-gradient(160deg,var(--panel),var(--panel2))
+    }
+    .customer strong{display:block;margin-bottom:6px}
+    .customer span{color:var(--muted);font-size:14px}
+
+    .work-model{
+      display:grid;grid-template-columns:1fr 1fr;gap:16px
+    }
+    .work-box{
+      padding:24px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.02)
+    }
+    .work-box h3{margin-bottom:8px}
+    .work-box p{margin:0;color:var(--muted)}
+
+    .owner{
+      display:grid;grid-template-columns:.8fr 1.2fr;gap:42px;align-items:center
+    }
+    .owner-badge{
+      min-height:250px;border:1px solid var(--line);border-radius:22px;
+      display:grid;place-items:center;text-align:center;padding:28px;
+      background:
+        radial-gradient(circle at 50% 30%,rgba(85,186,255,.13),transparent 34%),
+        linear-gradient(160deg,var(--panel),var(--panel2))
+    }
+    .owner-badge .initials{
+      width:92px;height:92px;border-radius:24px;border:1px solid var(--line);
+      display:grid;place-items:center;font-size:32px;font-weight:900;color:var(--accent2);
+      margin:0 auto 16px
+    }
+    .owner-badge strong{font-size:20px}
+    .owner-badge span{display:block;color:var(--muted);font-size:14px}
+
+    .contact-box{
+      text-align:center;padding:72px 28px;border:1px solid var(--line);border-radius:24px;
+      background:linear-gradient(145deg,rgba(20,31,45,.97),rgba(11,16,23,.97));
+      box-shadow:var(--shadow)
+    }
+    .contact-box h2{font-size:clamp(34px,5vw,46px);letter-spacing:-.035em;margin:8px 0 12px}
+    .contact-box p{max-width:700px;margin:0 auto 26px;color:var(--muted)}
+    .contact-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+    footer{padding:30px 0 42px;color:var(--muted);font-size:13px}
+    .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+    @media(max-width:920px){
+      .navlinks{display:none}
+      .hero{grid-template-columns:1fr;gap:34px;padding-top:74px}
+      .services-grid{grid-template-columns:1fr 1fr}
+      .split,.owner{grid-template-columns:1fr}
+      .customer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:640px){
+      .wrap{width:min(var(--max),calc(100% - 28px))}
+      nav{min-height:64px}
+      .desktop-cta{display:none}
+      .brand-mark{width:35px;height:35px}
+      .brand-name{font-size:14px}
+      .hero{padding:60px 0 64px}
+      .hero p{font-size:17px}
+      .services-grid,.customer-grid,.work-model{grid-template-columns:1fr}
+      .capability-row{grid-template-columns:1fr;gap:4px}
+      section{padding:64px 0}
+      .contact-box{padding:56px 20px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top">
+        <div class="brand-mark">HI</div>
+        <div class="brand-name">HORN INTEGRATIONS<span class="brand-sub">LOW-VOLTAGE & ICT</span></div>
+      </a>
+      <div class="navlinks">
+        <a href="#services">Services</a>
+        <a href="#customers">Who We Serve</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn desktop-cta" href="mailto:chase@hornintegrations.com?subject=Project%20Inquiry">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">Low-Voltage • ICT • Security Infrastructure</div>
+      <h1>Hands-on integration for connected spaces.</h1>
+      <p>
+        Horn Integrations provides hands-on low-voltage and ICT installation, testing,
+        troubleshooting, and field support for commercial and residential environments.
+      </p>
+      <div class="actions">
+        <a class="btn" href="mailto:chase@hornintegrations.com?subject=Horn%20Integrations%20Project%20Inquiry">Request a Quote</a>
+        <a class="btn secondary" href="#services">View Services</a>
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <h3>Project Capabilities</h3>
+      <ul>
+        <li><span class="dot"></span><span>Camera and surveillance system installation</span></li>
+        <li><span class="dot"></span><span>Structured cabling and network infrastructure</span></li>
+        <li><span class="dot"></span><span>Access-control field devices and door hardware</span></li>
+        <li><span class="dot"></span><span>Testing, troubleshooting, and documentation</span></li>
+        <li><span class="dot"></span><span>Direct projects and subcontract field support</span></li>
+      </ul>
+    </aside>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Services</div>
+        <h2>What We Do</h2>
+        <p>
+          Installation, testing, troubleshooting, and documentation across low-voltage and ICT systems.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="card">
+          <div class="num">01</div>
+          <h3>Cameras & Video Surveillance</h3>
+          <p>Camera mounting, cabling, device installation, network connectivity, replacement, and field troubleshooting.</p>
+        </article>
+        <article class="card">
+          <div class="num">02</div>
+          <h3>Structured & Backbone Cabling</h3>
+          <p>Horizontal and backbone cabling, terminations, labeling, patching, testing, moves/adds/changes, and cleanup of existing cabling.</p>
+        </article>
+        <article class="card">
+          <div class="num">03</div>
+          <h3>Access-Control Field Devices</h3>
+          <p>Readers, request-to-exit devices, strikes, locks, door-side hardware, cabling, and field troubleshooting.</p>
+        </article>
+        <article class="card">
+          <div class="num">04</div>
+          <h3>Fiber Testing & Troubleshooting</h3>
+          <p>Fiber testing, OTDR work, troubleshooting, verification, and documentation for inside-plant fiber systems.</p>
+        </article>
+        <article class="card">
+          <div class="num">05</div>
+          <h3>Copper Certification</h3>
+          <p>Copper certification testing, fault isolation, labeling, test-result organization, and closeout support.</p>
+        </article>
+        <article class="card">
+          <div class="num">06</div>
+          <h3>Communications Systems</h3>
+          <p>Field experience with nurse call, paging and speaker systems, device cabling, testing, labeling, and related low-voltage infrastructure.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="customers">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Environments</div>
+        <h2>Experience across demanding building types.</h2>
+        <p>
+          Field experience ranges from small businesses and residential work to large commercial and mission-critical environments.
+        </p>
+      </div>
+
+      <div class="customer-grid">
+        <div class="customer">
+          <strong>Data Centers</strong>
+          <span>Experience working around structured cabling, backbone infrastructure, testing, labeling, and high-density communications environments.</span>
+        </div>
+        <div class="customer">
+          <strong>Healthcare</strong>
+          <span>Experience in healthcare environments including nurse call, communications infrastructure, and low-voltage field work.</span>
+        </div>
+        <div class="customer">
+          <strong>Warehouses & Commercial Buildings</strong>
+          <span>Experience in large-footprint facilities, offices, and operational spaces where organized cabling and reliable systems matter.</span>
+        </div>
+        <div class="customer">
+          <strong>Small Business & Residential</strong>
+          <span>Flexible support for smaller sites, upgrades, service work, and one-building projects.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="capabilities">
+    <div class="wrap split">
+      <div>
+        <div class="eyebrow">Testing & Documentation</div>
+        <div class="section-head" style="margin-bottom:0">
+          <h2>Verify it. Label it. Document it.</h2>
+        </div>
+        <p>
+          Good field work should be easy to test, trace, service, and hand off. Horn Integrations puts emphasis on verification and organized closeout—not just getting cable from point A to point B.
+        </p>
+
+        <div class="capability-table">
+          <div class="capability-row"><strong>Copper</strong><span>Certification testing, fault isolation, link verification, and organized test results.</span></div>
+          <div class="capability-row"><strong>Fiber</strong><span>OTDR testing, troubleshooting, verification, and backbone documentation.</span></div>
+          <div class="capability-row"><strong>Labeling</strong><span>Consistent cable, port, device, and pathway identification for serviceability.</span></div>
+          <div class="capability-row"><strong>Closeout</strong><span>Cable matrices, test records, port information, and field documentation for turnover.</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="eyebrow">Platforms & Products</div>
+        <div class="section-head" style="margin-bottom:18px">
+          <h2>Industry systems and hardware.</h2>
+        </div>
+        <div class="credential-list">
+          <div class="credential"><strong>Verkada</strong><span>Hands-on camera and access-control field experience.</span></div>
+          <div class="credential"><strong>Leviton</strong><span>Structured cabling training and product familiarity.</span></div>
+          <div class="credential"><strong>Fluke Networks</strong><span>Copper and fiber test-equipment experience.</span></div>
+          <div class="credential"><strong>Panduit • CommScope • Siemon</strong><span>Field familiarity with structured-cabling components and systems.</span></div>
+          <div class="credential"><strong>HES</strong><span>Electric strike and access-control hardware experience.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">How We Work</div>
+        <h2>Direct Projects & Subcontract Support</h2>
+        <p>
+          Horn Integrations works with end customers as well as contractors, integrators, IT providers,
+          and security companies that need dependable field support.
+        </p>
+      </div>
+
+      <div class="work-model">
+        <div class="work-box">
+          <h3>Direct Projects</h3>
+          <p>For businesses, property owners, and organizations that need a responsive low-voltage contractor for a defined project or service need.</p>
+        </div>
+        <div class="work-box">
+          <h3>Subcontract Field Support</h3>
+          <p>Field labor and technical support for integrators, electrical contractors, IT providers, and security companies that need another capable technician on the project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap owner">
+      <div class="owner-badge">
+        <div>
+          <div class="initials">CH</div>
+          <strong>Chase Horn</strong>
+          <span>Founder • BICSI Technician (TECH)</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="eyebrow">About Horn Integrations</div>
+        <div class="section-head" style="margin-bottom:0">
+          <h2>Built on real field experience.</h2>
+        </div>
+        <p>
+          Horn Integrations was founded by Chase Horn after building hands-on experience across commercial low-voltage and ICT environments,
+          including data centers, healthcare facilities, warehouses, offices, backbone cabling, nurse call, security systems, and communications infrastructure.
+        </p>
+        <p>
+          The company is focused on dependable field execution, continued technical development,
+          and building long-term relationships with customers, contractors, and integration partners.
+        </p>
+
+        <div class="credential-list" style="margin-top:22px">
+          <div class="credential"><strong>BICSI Technician (TECH)</strong><span>Current credential.</span></div>
+          <div class="credential"><strong>OSHA 30 Construction</strong><span>Current safety training.</span></div>
+          <div class="credential"><strong>Leviton Trained</strong><span>Structured cabling training.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Service Area</div>
+        <h2>Kentucky-based. Available for project travel.</h2>
+        <p>
+          Local and regional work is welcome, with travel considered for the right project.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <div class="eyebrow">Contact</div>
+        <h2>Talk through the scope.</h2>
+        <p>
+          For direct projects, subcontract opportunities, troubleshooting, or field support, contact Horn Integrations and describe what you need done.
+        </p>
+        <div class="contact-actions">
+          <a class="btn" href="tel:+12707343741">Call 270-734-3741</a>
+          <a class="btn secondary" href="mailto:chase@hornintegrations.com?subject=Horn%20Integrations%20Project%20Inquiry">chase@hornintegrations.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Horn Integrations LLC. All rights reserved.</span>
+    <span>hornintegrations.com</span>
+  </div>
+</footer>
+</body>
+</html>
